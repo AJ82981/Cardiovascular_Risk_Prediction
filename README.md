@@ -16,7 +16,7 @@ This project aims to develop a predictive model for assessing the risk of cardio
 
 - **Description:** The dataset contains information related to various health attributes and risk factors associated with cardiovascular diseases. It includes features such as age, gender, blood pressure, cholesterol levels, smoking status, and more.
 
-- **Exploratory Data Analysis (EDA):** You may choose to include a brief summary or visualization of key insights gained from exploratory data analysis.
+- **Exploratory Data Analysis (EDA):** 
 
 - **Data Preprocessing:** We perform data preprocessing steps, which includes data cleaning, handling missing values, feature engineering, and data normalization. These steps ensure the dataset is suitable for machine learning model training.
 
