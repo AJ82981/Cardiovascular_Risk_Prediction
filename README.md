@@ -103,6 +103,3 @@ In this project, we have explored several machine learning models to predict car
 Each of these models was trained, evaluated, and fine-tuned to provide the best possible predictions for cardiovascular risk assessment. The validation metrics mentioned above demonstrate the performance of each model on the validation dataset.
 
 ---
-
-
-Each of these models was trained, evaluated, and fine-tuned to provide the best possible predictions for cardiovascular risk assessment. Validation metrics such as accuracy, precision, recall, and F1 score demonstrate the performance of each model on the validation dataset.
