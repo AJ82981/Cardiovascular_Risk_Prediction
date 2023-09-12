@@ -101,5 +101,3 @@ In this project, we have explored several machine learning models to predict car
 - F1 Score: 0.25
 
 Each of these models was trained, evaluated, and fine-tuned to provide the best possible predictions for cardiovascular risk assessment. The validation metrics mentioned above demonstrate the performance of each model on the validation dataset.
-
----
