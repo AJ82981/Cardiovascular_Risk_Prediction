@@ -24,80 +24,109 @@ This project aims to develop a predictive model for assessing the risk of cardio
 
 - **Handling Imbalanced Datasets:** To address the issue of class imbalance (where one class significantly outnumbers the other), we use the Synthetic Minority Over-sampling Technique (SMOTE). SMOTE helps balance the distribution of the target variable by generating synthetic samples for the minority class.
 
-## ML Model
 
-In this project, we have explored several machine learning models to predict cardiovascular risk. Here are the models we have implemented along with their descriptions and validation metrics:
+# ML Model Comparison and Evaluation
 
-### Logistic Regression:
+In this section, we evaluate and compare the performance of different machine learning models for predicting cardiovascular risk based on selected features. We examine several classification models, including Logistic Regression, Decision Tree Classifier, Histogram-Based Gradient Boosting (HGB) Classifier, Random Forest Classifier, and Support Vector Classifier (SVC). For each model, we provide a brief description, implementation details, and validation metrics for both the original dataset and a dataset resampled using SMOTE.
 
+## Logistic Regression:
 **Description:** Logistic Regression is a linear classification algorithm used to model the probability of a binary outcome. It's interpretable and provides insights into feature importance.
 
 **Implementation:** We trained a Logistic Regression model to predict cardiovascular risk based on the selected features.
 
-**Validation Metrics:**
+**Validation Metrics (SMOTE X_train, y_train):**
 - Accuracy: 0.70
 - Precision: 0.28
 - Recall: 0.66
 - F1 Score: 0.40
 
-### Random Forest Classifier:
+## Decision Tree Classifier:
+**Description:** The Decision Tree Classifier is a non-linear classification algorithm that recursively splits data into subsets based on the most significant attribute, resulting in a tree-like structure.
 
-**Description:** Random Forest Classifier is an ensemble learning method that combines multiple decision trees to improve predictive accuracy and reduce overfitting.
+**Implementation:** We trained a Decision Tree Classifier model to predict cardiovascular risk based on the selected features.
 
-**Implementation:** We built a Random Forest Classifier to enhance the predictive performance of our model.
-
-**Validation Metrics:**
-- Accuracy: 0.82
-- Precision: 0.33
-- Recall: 0.19
+**Validation Metrics (X_train, y_train):**
+- Accuracy: 0.75
+- Precision: 0.22
+- Recall: 0.25
 - F1 Score: 0.24
 
-### Support Vector Classifier (SVC):
+**Validation Metrics (SMOTE X_train, y_train):**
+- Accuracy: 0.71
+- Precision: 0.15
+- Recall: 0.20
+- F1 Score: 0.17
 
-**Description:** Support Vector Classifier (SVC) is a powerful algorithm for both classification and regression tasks. It finds the optimal hyperplane to separate data points.
+## Histogram-Based Gradient Boosting Classifier (HGB):
+**Description:** The Histogram-Based Gradient Boosting Classifier is an ensemble learning method that builds an additive model of decision trees to predict outcomes.
 
-**Implementation:** We utilized an SVC to classify individuals into risk categories based on health attributes.
+**Implementation:** We trained an HGB model to predict cardiovascular risk based on the selected features.
 
-**Validation Metrics:**
-- Accuracy: 0.85
-- Precision: 0.00
-- Recall: 0.00
-- F1 Score: 0.00
+**Validation Metrics (X_train, y_train):**
+- Accuracy: 0.83
+- Precision: 0.30
+- Recall: 0.08
+- F1 Score: 0.12
 
-### Decision Tree Classifier:
-
-**Description:** Decision Tree Classifier is a non-linear algorithm that makes predictions by partitioning the feature space into regions. It's capable of capturing complex relationships in the data.
-
-**Implementation:** We employed a Decision Tree Classifier to analyze the dataset and make predictions.
-
-**Validation Metrics:**
-- Accuracy: 0.80
-- Precision: 0.29
-- Recall: 0.24
-- F1 Score: 0.26
-
-### Histogram-Based Gradient Boosting Classifier (HistGradientBoostingClassifier):
-
-**Description:** HistGradientBoostingClassifier is a boosting algorithm that optimizes the prediction by combining the results of multiple weak learners (typically decision trees).
-
-**Implementation:** We used the HistGradientBoostingClassifier to create an ensemble model for cardiovascular risk prediction.
-
-**Validation Metrics:**
-- Accuracy: 0.81
-- Precision: 0.20
+**Validation Metrics (SMOTE X_train, y_train):**
+- Accuracy: 0.82
+- Precision: 0.26
 - Recall: 0.10
-- F1 Score: 0.13
+- F1 Score: 0.14
 
-### Gradient Boosting Classifier:
+## Random Forest Classifier:
+**Description:** The Random Forest Classifier is an ensemble learning method that builds multiple decision trees and combines their predictions for improved accuracy and generalization.
 
-**Description:** Gradient Boosting is a machine learning technique for regression and classification problems that builds an additive model in a forward stage-wise manner.
+**Implementation:** We trained a Random Forest Classifier model to predict cardiovascular risk based on the selected features.
 
-**Implementation:** We applied Gradient Boosting to improve the model's predictive performance.
+**Validation Metrics (SMOTE X_train, y_train):**
+- Accuracy: 0.82
+- Precision: 0.31
+- Recall: 0.17
+- F1 Score: 0.22
 
-**Validation Metrics:**
+**Validation Metrics (Unsampled X_train, y_train):**
+- Accuracy: 0.83
+- Precision: 0.37
+- Recall: 0.19
+- F1 Score: 0.25
+
+## Gradient Boosting Classifier:
+**Description:** The Gradient Boosting Classifier is an ensemble learning method that builds an additive model of decision trees to predict outcomes.
+
+**Implementation:** We trained a Gradient Boosting Classifier model to predict cardiovascular risk based on the selected features.
+
+**Validation Metrics (SMOTE X_train, y_train):**
 - Accuracy: 0.78
 - Precision: 0.26
 - Recall: 0.25
 - F1 Score: 0.25
 
-Each of these models was trained, evaluated, and fine-tuned to provide the best possible predictions for cardiovascular risk assessment. The validation metrics mentioned above demonstrate the performance of each model on the validation dataset.
+**Validation Metrics After Hyperparameter Tuning (SMOTE X_train, y_train):**
+- Accuracy: 0.80
+- Precision: 0.17
+- Recall: 0.08
+- F1 Score: 0.11
+
+## Support Vector Classifier:
+**Description:** The Support Vector Classifier (SVC) is a linear classifier that aims to find the hyperplane that best separates the classes.
+
+**Implementation:** We trained a Support Vector Classifier model to predict cardiovascular risk based on the selected features.
+
+**Validation Metrics (X_train, y_train):**
+- Accuracy: 0.85
+- Precision: 0.00
+- Recall: 0.00
+- F1 Score: 0.00
+
+## Summary:
+Among the tested models, the Random Forest Classifier with unsampled X_train, y_train data achieved the highest F1 score (0.25) and a relatively balanced precision and recall.
+
+The Logistic Regression model with SMOTE X_train, y_train data achieved the highest F1 score (0.40) but has a relatively low precision and a high recall for class 1.0, indicating a trade-off between precision and recall.
+
+The Decision Tree Classifier showed a balance between precision and recall in the X_train, y_train scenario.
+
+The Histogram-Based Gradient Boosting Classifier (HGB) did not perform as well in terms of F1 score or recall in both scenarios.
+
+The Support Vector Classifier did not perform well in terms of classification metrics, achieving an F1 score of 0.00.
+
